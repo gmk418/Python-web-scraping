@@ -1,10 +1,10 @@
 # Python Web Scraping Guide
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/blob/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.com/products/web-scraper) 
+[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/blob/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/products/web-scraper) 
 
-In this Python Web Scraping repository, you will find everything you need to get started with web scraping. We will explore how web scraping works, dive into various approaches in Python, and review complete examples at the end.
+このPython Webスクレイピング用リポジトリでは、Webスクレイピングを始めるために必要なものがすべて見つかります。Webスクレイピングの仕組みを確認し、Pythonにおけるさまざまなアプローチを深掘りし、最後に完全な例をレビューします。
 
-Python is widely considered one of the [best languages for web scraping](https://brightdata.com/blog/web-data/best-languages-web-scraping) thanks to its simple syntax and a vast selection of open-source libraries. Time to learn more about it!
+Pythonは、シンプルな構文と豊富なオープンソースライブラリの選択肢により、[Webスクレイピングに最適な言語の1つ](https://brightdata.jp/blog/web-data/best-languages-web-scraping)として広く評価されています。より詳しく学んでいきましょう！
 
 ## Table of Contents
 - [Web Scraping Logic in Python](#web-scraping-logic-in-python)
@@ -37,124 +37,124 @@ Python is widely considered one of the [best languages for web scraping](https:/
 - [Simplified Web Scraping With Web Scraper API](#simplified-web-scraping-with-web-scraper-api)
 
 ## Web Scraping Logic in Python
-The main building blocks for any [Python web scraping](https://brightdata.com/blog/how-tos/web-scraping-with-python) script are:
-1. Retrieve the HTML of the target page.
-2. Parse the HTML into a Python object.
-3. Extract data from the parsed HTML.
-4. Export the extracted data to a human-readable format, such as CSV or JSON.
+あらゆる[PythonによるWebスクレイピング](https://brightdata.jp/blog/how-tos/web-scraping-with-python)スクリプトの主要な構成要素は次のとおりです：
+1. 対象ページのHTMLを取得します。
+2. HTMLをPythonオブジェクトにパースします。
+3. パースしたHTMLからデータを抽出します。
+4. 抽出したデータをCSVやJSONなど、人間が読みやすい形式にエクスポートします。
 
-The approach for the first two steps depends on whether the target page is static or dynamic:
-- **Static Sites**: Use an HTTP client like [Requests](https://requests.readthedocs.io/en/latest/) to request the HTML directly from the server. After receiving the response, parse the HTML using an HTML parser like [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
-- **Dynamic Sites**: Use a browser automation tool (e.g., [Selenium](https://selenium-python.readthedocs.io/)) to load the page in a headless browser. This approach enables you to render dynamic content before parsing it with the browser engine.
+最初の2ステップのアプローチは、対象ページが静的か動的かによって異なります：
+- **静的サイト**：[Requests](https://requests.readthedocs.io/en/latest/)のようなHTTPクライアントを使用して、サーバーから直接HTMLをリクエストします。レスポンスを受け取ったら、[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)のようなHTMLパーサーでHTMLをパースします。
+- **動的サイト**：[Selenium](https://selenium-python.readthedocs.io/)などのブラウザ自動化ツールを使用し、ヘッドレスブラウザでページを読み込みます。このアプローチにより、動的コンテンツをレンダリングしてからブラウザエンジンでパースできます。
 
-For step 3, the high-level logic for extracting data depends on the DOM structure of the page. However, the implementation will vary based on the tools you choose and the methods they provide for HTML node selection and data extraction.
+ステップ3については、データ抽出の高レベルなロジックはページのDOM構造に依存します。ただし、実装は選択したツールと、それらが提供するHTMLノード選択およびデータ抽出の方法によって変わります。
 
-Finally, keep in mind that there are also all-in-one web scraping tools like [Scrapy](https://scrapy.org/). These libraries simplify the process by integrating all four steps into a single platform, streamlining the scraping workflow.
+最後に、[Scrapy](https://scrapy.org/)のようなオールインワンのWebスクレイピングツールもある点に留意してください。これらのライブラリは4つのステップすべてを単一のプラットフォームに統合することでプロセスを簡素化し、スクレイピングのワークフローを効率化します。
 
 ## Python Web Scraping Libraries
-Discover some of the most useful libraries for web scraping with Python. For a comprehensive list, refer to our [Awesome Web Scraping repository](https://github.com/luminati-io/Awesome-Web-Scraping/blob/main/python.md).
+PythonでのWebスクレイピングに役立つ代表的なライブラリをご紹介します。包括的な一覧については、[Awesome Web Scraping repository](https://github.com/luminati-io/Awesome-Web-Scraping/blob/main/python.md)をご参照ください。
 
 ### HTTP Clients
-- [`requests`](https://github.com/kennethreitz/requests): A simple, yet elegant HTTP library.
-- [`httpx`](https://github.com/encode/httpx): A next generation HTTP client for Python.
-- [`aiohttp`](https://github.com/aio-libs/aiohttp): An asynchronous HTTP client/server framework for `asyncio` and Python.
+- [`requests`](https://github.com/kennethreitz/requests): シンプルでありながら洗練されたHTTPライブラリです。
+- [`httpx`](https://github.com/encode/httpx): Python向けの次世代HTTPクライアントです。
+- [`aiohttp`](https://github.com/aio-libs/aiohttp): `asyncio`とPython向けの非同期HTTPクライアント/サーバーフレームワークです。
 
 ### HTML Parsers
-- [`beautifulsoup4`](https://www.crummy.com/software/BeautifulSoup/): A program designed for screen-scraping HTML.
-- [`lxml`](https://github.com/lxml/lxml/): A feature-rich and easy-to-use library for processing XML and HTML in the Python language
-- [`html5lib`](https://github.com/html5lib/html5lib-python): A Standards-compliant library for parsing and serializing HTML documents and fragments in Python
+- [`beautifulsoup4`](https://www.crummy.com/software/BeautifulSoup/): HTMLのスクリーンスクレイピング向けに設計されたプログラムです。
+- [`lxml`](https://github.com/lxml/lxml/): Python言語でXMLとHTMLを処理するための高機能で使いやすいライブラリです。
+- [`html5lib`](https://github.com/html5lib/html5lib-python): PythonでHTMLドキュメントおよびフラグメントをパース/シリアライズするための標準準拠ライブラリです。
 
 ### Browser Automation
-- [`selenium`](https://github.com/SeleniumHQ/selenium): A browser automation framework and ecosystem.
-- [`playwright`](https://github.com/microsoft/playwright-python): A Python version of the Playwright testing and automation library.
-- [`pyppeteer`](https://github.com/pyppeteer/pyppeteer): A headless Chrome/Chromium automation library (unofficial port of Puppeteer).
+- [`selenium`](https://github.com/SeleniumHQ/selenium): ブラウザ自動化フレームワークおよびエコシステムです。
+- [`playwright`](https://github.com/microsoft/playwright-python): Playwrightのテストおよび自動化ライブラリのPython版です。
+- [`pyppeteer`](https://github.com/pyppeteer/pyppeteer): ヘッドレスのChrome/Chromium自動化ライブラリ（Puppeteerの非公式ポート）です。
 
 ### All-in-One Scraping
-- [`scrapy`](https://github.com/scrapy/scrapy): A fast high-level web crawling & scraping framework for Python.
-- [`autoscraper`](https://github.com/alirezamika/autoscraper): A smart, automatic, fast and lightweight web scraper for Python.
-- [`requests-html`](https://github.com/psf/requests-html): A library that intends to make parsing HTML (e.g. scraping the web) as simple and intuitive as possible.
+- [`scrapy`](https://github.com/scrapy/scrapy): Python向けの高速な高レベルWebクローリング＆スクレイピングフレームワークです。
+- [`autoscraper`](https://github.com/alirezamika/autoscraper): Python向けのスマートで自動、かつ高速で軽量なweb scraperです。
+- [`requests-html`](https://github.com/psf/requests-html): HTMLのパース（例：Webスクレイピング）をできるだけ簡単かつ直感的に行えるようにすることを目的としたライブラリです。
 
 ## Common Stacks for Scraping in Python
-Compare the three most common Python web scraping stacks in the following table:
+以下の表で、最も一般的なPython Webスクレイピングの3つのスタックを比較します：
 |                               | **Requests + Beautiful Soup**                                                                            | **Selenium**                                                                                  | **Scrapy**                                                                                                                        |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Description**               | Uses Requests to fetch the HTML content of a webpage, and Beautiful Soup for parsing and extracting data | Automates web browsers to interact with dynamic sites, fetch data, and simulate user behavior | A powerful framework for large-scale web scraping tasks                                                                           |
-| **Requirements**              | - `requests`<br>- `beautifulsoup4`                                                                       | -  `selenium`<br>- A web browser like Chrome, Firefox, or Edge                                | - `scrapy`                                                                                                                        |
-| **Support for Static Pages**  | Yes                                                                                                      | Yes                                                                                           | Yes                                                                                                                               |
-| **Support for Dynamic Pages** | No                                                                                                       | Yes                                                                                           | Not available out of the box, but can be accessed via the [Scrapy Splash plugin](https://github.com/scrapy-plugins/scrapy-splash) |
-| **Best For**                  | Simple scraping tasks                                                                                    | Scraping dynamic websites that require user interaction                                       | Large-scale scraping projects, involving web crawling                                                                             |
+| **Description**               | RequestsでWebページのHTMLコンテンツを取得し、Beautiful Soupでパースしてデータを抽出します | Webブラウザを自動化して動的サイトと対話し、データ取得やユーザー行動のシミュレーションを行います | 大規模なWebスクレイピングタスク向けの強力なフレームワークです                                                                           |
+| **Requirements**              | - `requests`<br>- `beautifulsoup4`                                                                       | -  `selenium`<br>- Chrome、Firefox、EdgeなどのWebブラウザ                                | - `scrapy`                                                                                                                        |
+| **Support for Static Pages**  | はい                                                                                                      | はい                                                                                           | はい                                                                                                                               |
+| **Support for Dynamic Pages** | いいえ                                                                                                       | はい                                                                                           | 標準では利用できませんが、[Scrapy Splash plugin](https://github.com/scrapy-plugins/scrapy-splash)経由で利用できます |
+| **Best For**                  | シンプルなスクレイピングタスク                                                                                    | ユーザー操作を必要とする動的Webサイトのスクレイピング                                       | Webクローリングを含む大規模スクレイピングプロジェクト                                                                             |
 
-You are ready to see how to perform web scraping using Requests + Beautiful Soup, which is the most common approach to data scraping in Python.
+Pythonでのデータスクレイピングにおいて最も一般的なアプローチであるRequests + Beautiful Soupを使ったWebスクレイピングの方法をご覧いただく準備が整いました。
 
 ## Prerequisites
-To perform web scraping in Python, you will need:
-- Python 3+ installed on your machine.
-- A Python project set up with a [virtual environment](https://docs.python.org/3/library/venv.html) where you can install the required scraping libraries.
+PythonでWebスクレイピングを行うには、以下が必要です：
+- マシンにPython 3+がインストールされていること。
+- 必要なスクレイピングライブラリをインストールできるよう、[virtual environment](https://docs.python.org/3/library/venv.html)を設定したPythonプロジェクト。
 
-Also, using a Python IDE like [Visual Studio Code with the Python extension](https://code.visualstudio.com/docs/languages/python) or [PyCharm](https://www.jetbrains.com/pycharm/) will make writing and managing your code much easier.
+また、[Visual Studio Code with the Python extension](https://code.visualstudio.com/docs/languages/python)や[PyCharm](https://www.jetbrains.com/pycharm/)などのPython IDEを使用すると、コードの記述と管理がはるかに容易になります。
 
 ## Web Scraping with Requests and Beautiful Soup
-Let’s now jump into web scraping with Beautiful Soup, using Requests as the HTTP client.
+それでは、HTTPクライアントとしてRequestsを使用し、Beautiful SoupでWebスクレイピングを行っていきます。
 
-**Note**: You can easily extend the following examples to Selenium-based web scraping or Scrapy-based web scraping.
+**Note**: 以下の例は、SeleniumベースのWebスクレイピングやScrapyベースのWebスクレイピングにも簡単に拡張できます。
 
-For a dedicated tutorial, refer to our guide on [web scraping with Beautiful Soup](https://brightdata.com/blog/how-tos/beautiful-soup-web-scraping).
+専用チュートリアルについては、[Beautiful Soupによるweb scraping](https://brightdata.jp/blog/how-tos/beautiful-soup-web-scraping)のガイドをご参照ください。
 
 ### Features
-Explore the main capabilities provided by Requests and Beautiful Soup.
+RequestsとBeautiful Soupが提供する主要な機能を確認します。
 
 #### Requests
-- Support for HTTP requests in any method (`GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `OPTIONS`).
-- Handles HTTP headers, cookies, and query parameters with ease.
-- Supports SSL/TLS verification for secure connections.
-- Automatic decoding of response content based on the server-provided encoding.
-- Built-in session handling for maintaining cookies and authentication.
-- Streamlined error handling for HTTP errors ([`4xx` and `5xx` response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)).
+- あらゆるメソッド（`GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `OPTIONS`）のHTTPリクエストをサポートします。
+- HTTPヘッダー、Cookie、クエリパラメータを簡単に扱えます。
+- 安全な接続のためのSSL/TLS検証をサポートします。
+- サーバー提供のエンコーディングに基づくレスポンスコンテンツの自動デコード。
+- Cookieと認証を維持するためのセッション処理を内蔵しています。
+- HTTPエラー（[`4xx`および`5xx`のレスポンスステータスコード](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)）のエラーハンドリングを簡素化します。
 
 #### Beautiful Soup
-- Parses HTML and XML documents into a Python-readable format.
-- Provides methods to search for elements using tags, attributes, and text.
-- Supports multiple parsers, including the fast built-in HTML parser [`html.parser`](https://docs.python.org/3/library/html.parser.html) and external parsers like `lxml`.
-- Handles poorly formatted or broken HTML gracefully.
-- Facilitates easy navigation (and modification) of parsed HTML content.
-- Integrates seamlessly with Requests and any other [Python HTTP client](https://brightdata.com/blog/web-data/best-python-http-clients) for complete web scraping workflows.
+- HTMLおよびXMLドキュメントをPythonで読み取れる形式にパースします。
+- タグ、属性、テキストを用いて要素を検索するためのメソッドを提供します。
+- 高速な組み込みHTMLパーサー[`html.parser`](https://docs.python.org/3/library/html.parser.html)や、`lxml`などの外部パーサーを含む複数のパーサーをサポートします。
+- 形式が不十分または壊れたHTMLでも適切に処理します。
+- パースしたHTMLコンテンツのナビゲーション（および変更）を容易にします。
+- Requestsおよびその他の任意の[Python HTTP client](https://brightdata.jp/blog/web-data/best-python-http-clients)とシームレスに統合でき、完全なWebスクレイピングワークフローを実現します。
 
 ### Setup
-To install Requests and Beautiful Soup in your project, execute the following command in your activated virtual environment:
+プロジェクトにRequestsとBeautiful Soupをインストールするには、有効化したvirtual environmentで次のコマンドを実行します：
 ```bash
 pip install requests beautifulsoup4
 ```
-You can then import the two libraries with:
+その後、次のように2つのライブラリをインポートできます：
 ```python
 import requests
 from bs4 import BeautifulSoup
 ```
 ### Methods
-Explore the most common operations for Python web scraping, made possible by the methods provided by Requests and Beautiful Soup.
+RequestsとBeautiful Soupが提供するメソッドにより可能となる、Python Webスクレイピングで最も一般的な操作を確認します。
 
 #### Connect to a Web Page
-Retrieve the HTML of a web page with the [`get()`](https://requests.readthedocs.io/en/latest/api/#requests.get) method exposed by Requests:
+Requestsが公開している[`get()`](https://requests.readthedocs.io/en/latest/api/#requests.get)メソッドでWebページのHTMLを取得します：
 ```python
 url = "https://en.wikipedia.org/wiki/Web_scraping"
 response = requests.get(url)
 ```
-Replace `url` with the URL of your target page.
+`url`は対象ページのURLに置き換えてください。
 
-Behind the scenes, Requests performs an HTTP `GET` request to the specified URL. The website's server responds with a response object containing the page's HTML. Verify that by printing `response`:
+内部的には、Requestsは指定されたURLに対してHTTP `GET`リクエストを実行します。Webサイトのサーバーは、ページのHTMLを含むレスポンスオブジェクトを返します。`response`を出力して確認できます：
 ```python
 print(response)
 ```
-The output should look like this:
+出力は次のようになります：
 ```
 <Response [200]>
 ```
-The HTTP response status code of [`200`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200) means that the request was successful.
+HTTPレスポンスステータスコード[`200`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200)は、リクエストが成功したことを意味します。
 
-To extract the HTML content from the response object, access the `text` attribute:
+レスポンスオブジェクトからHTMLコンテンツを抽出するには、`text`属性にアクセスします：
 ```python
 print(response.text)
 ```
-This will print the HTML content of the page:
+これにより、ページのHTMLコンテンツが出力されます：
 ```html
 <!DOCTYPE html>
 <html
@@ -169,33 +169,33 @@ This will print the HTML content of the page:
   </head>
 </html>
 ```
-The output is a string containing the raw HTML of the page.
+出力は、ページの生HTMLを含む文字列です。
 
 #### Parse an HTML String
-You can parse an HTML string by passing it to the Beautiful Soup constructor:
+HTML文字列は、Beautiful Soupのコンストラクタに渡すことでパースできます：
 ```python
 soup = BeautifulSoup(html, "html.parser")
 ```
-The first argument is a variable containing the raw HTML as a string. Instead, the second argument specifies the parser to use for processing the HTML. Here, `html.parser` is the default HTML parser provided by Python's standard library.
+第1引数は、生HTMLを文字列として含む変数です。一方、第2引数はHTML処理に使用するパーサーを指定します。ここでは`html.parser`が、Python標準ライブラリが提供するデフォルトのHTMLパーサーです。
 
-The resulting `soup` variable contains methods and attributes that allow you to select HTML nodes, modify the DOM, and access and manipulate data within selected nodes.
+結果として得られる`soup`変数には、HTMLノードの選択、DOMの変更、選択したノード内のデータへのアクセスおよび操作を可能にするメソッドと属性が含まれます。
 
 #### Basic Node Selection and Data Extraction Methods
-You can retrieve the `<title>` element of the page as follows:
+ページの`<title>`要素は次のように取得できます：
 ```python
 print(soup.title)
 
 # OUTPUT:
 # <title>Web scraping - Wikipedia</title>
 ```
-To extract the text inside the `<title>` element, use the `text` attribute:
+`<title>`要素内のテキストを抽出するには、`text`属性を使用します：
 ```python
 print(soup.title.text)
 
 # OUTPUT:
 # Web scraping - Wikipedia
 ```
-Similarly, you can access the `<h1>` element like this:
+同様に、`<h1>`要素には次のようにアクセスできます：
 ```python
 print(soup.h1)
 
@@ -204,7 +204,7 @@ print(soup.h1)
 #   <span class="mw-page-title-main">Web scraping</span>
 # </h1>
 ```python
-To retrieve the value of an HTML attribute (e.g., `id`), access it using the attribute name as a dictionary key:
+HTML属性（例：`id`）の値を取得するには、属性名を辞書キーとしてアクセスします：
 ```python
 print(soup.h1["id"])
 
@@ -212,19 +212,19 @@ print(soup.h1["id"])
 # firstHeading
 ```
 #### Find Nodes
-Two of the most commonly used methods in Beautiful Soup for finding HTML elements are [`find()` and `find_all()`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#calling-a-tag-is-like-calling-find-all). These methods enable you to locate specific elements or groups of elements within an HTML document.
+Beautiful SoupでHTML要素を見つけるためによく使用されるメソッドは、[`find()`と`find_all()`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#calling-a-tag-is-like-calling-find-all)の2つです。これらのメソッドにより、HTMLドキュメント内の特定要素や要素グループを特定できます。
 
-Here is a quick overview:
-- `find()`: Locates the first matching element.
-- `find_all()`: Returns a list of all matching elements.
+簡単な概要は次のとおりです：
+- `find()`：最初に一致した要素を見つけます。
+- `find_all()`：一致した要素すべてのリストを返します。
 
-The signature for `find()` looks like this:
+`find()`のシグネチャは次のようになります：
 ```python
 find(name=None, attrs={}, recursive=True, text=None, **kwargs)
 ```
-This shows that `find()` can search by tag name, attributes, or text content. To find an element by class or ID, the `**kwargs` parameter allows you to filter easily.
+これは、`find()`がタグ名、属性、またはテキスト内容で検索できることを示しています。classやIDで要素を見つける場合、`**kwargs`パラメータで簡単にフィルタリングできます。
 
-For example, to get the `<h1>` element with `id="firstHeading"`, you can write:
+たとえば、`id="firstHeading"`の`<h1>`要素を取得するには次のように記述します：
 ```python
 h1 = soup.find("h1", id="firstHeading")
 print(h1)
@@ -234,9 +234,9 @@ print(h1)
 #   <span class="mw-page-title-main">Web scraping</span>
 # </h1>
 ```
-Although `id` is not an explicit parameter of `find()`, the logic above works seamlessly thanks to the flexibility of `**kwargs`.
+`id`は`find()`の明示的なパラメータではありませんが、`**kwargs`の柔軟性により上記ロジックは問題なく動作します。
 
-If you need all elements of a particular type, such as headings or links, `find_all()` is the better choice. For instance, to get all `<a>` tags:
+見出しやリンクなど、特定タイプの要素をすべて必要とする場合は、`find_all()`のほうが適しています。たとえば、すべての`<a>`タグを取得するには：
 ```python
 links = soup.find_all("a")
 print(links)
@@ -253,7 +253,7 @@ print(links)
 #     omitted for brevity...
 # ]
 ```
-This method returns a list of matching elements, enabling you to easily loop through them and perform operations, such as extracting their text. For example, you can extract the text content of all matching elements using the following code:
+このメソッドは一致した要素のリストを返すため、簡単にループ処理して、テキスト抽出などの操作を行えます。たとえば、次のコードで一致した要素すべてのテキスト内容を抽出できます：
 ```python
 links = soup.find_all("a")
 for link in links:
@@ -265,17 +265,17 @@ for link in links:
 # Contents
 # omitted for brevity...
 ```
-You can also combine tag names with attribute filters to narrow down your search. For example, to find all `<span>` tags with `class="mw-editsection"`, write:
+また、タグ名と属性フィルタを組み合わせて検索範囲を絞り込むこともできます。たとえば、`class="mw-editsection"`の`<span>`タグをすべて見つけるには次のように書きます：
 ```python
 specific_spans = soup.find_all("span", {"class": "mw-editsection"})
 ```
-Or, equivalently:
+または同等に、次のようにも書けます：
 ```python
 specific_spans = soup.find_all("span", class_="mw-editsection")
 ```
-Since `class` is a reserved keyword in Python, you cannot use it directly as a parameter. Instead, you should `class_`.
+`class`はPythonの予約語のため、パラメータとして直接使用できません。代わりに`class_`を使用します。
 
-Both approaches will return a list of all `<span>` elements that match the specified criteria:
+どちらのアプローチも、指定条件に一致する`<span>`要素すべてのリストを返します：
 ```
 [
     <span class="mw-editsection">
@@ -295,12 +295,12 @@ Both approaches will return a list of all `<span>` elements that match the speci
     <!-- omitted for brevity... -->
 ]
 ```
-Note that the objects returned by `find()` and `find_all()` expose these two methods as well. When called on result nodes, the scope of `find()` and `find_all()` will be limited to their child nodes.
-For example, select the HTML element containing the page references by class:
+`find()`と`find_all()`が返すオブジェクトも、これら2つのメソッドを公開している点に注意してください。結果ノードに対して呼び出した場合、`find()`と`find_all()`のスコープはその子ノードに限定されます。
+たとえば、ページの参照（references）を含むHTML要素をclassで選択します：
 ```python
 references_element = soup.find(class_="references")
 ```
-Then, get all `<li>` tags inside this element and print their content with:
+次に、この要素内のすべての`<li>`タグを取得し、次のように内容を出力します：
 ```python
 list_items = references_element.find_all("li")
 for item in list_items:
@@ -314,9 +314,9 @@ for item in list_items:
 ```
 
 #### Select Nodes
-Another useful method in Beautiful Soup for locating elements is [`select()`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors-through-the-css-property). This function allows you to find elements using [CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors), which offer a powerful and flexible way to target elements based on their tags, classes, ids, and other attributes.
+Beautiful Soupで要素を特定する別の有用なメソッドは、[`select()`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#css-selectors-through-the-css-property)です。この関数により、[CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors)を使用して要素を検索できます。CSSセレクタは、タグ、class、id、その他の属性に基づいて要素を指定できる強力かつ柔軟な方法です。
 
-For example, you can get all `<li>` elements inside the `.references` nodes with:
+たとえば、`.references`ノード内のすべての`<li>`要素は次のように取得できます：
 ```python
 li_elements = soup.select(".references > li")
 print(len(li_elements))
@@ -326,7 +326,7 @@ print(len(li_elements))
 ```
 
 ## Export the Scraped Data
-Once you have scraped data from the target page, you will likely find yourself with a dictionary containing the extracted data. For instance, suppose your `titles` dictionary list with scraped data contains:
+対象ページからデータをスクレイピングしたら、抽出データを含む辞書を保持していることが多いはずです。たとえば、スクレイピングしたデータを含む`titles`の辞書リストが次のようになっているとします：
 ```
 [
     {'tag': 'h1', 'title': 'Web scraping'},
@@ -339,34 +339,34 @@ Once you have scraped data from the target page, you will likely find yourself w
     {'tag': 'h3', 'title': 'India'}
 ]
 ```
-Usually, you want to export this data into a human-readable format like CSV or JSON, so that other members of your team can easily access and use it. Let's see how to export it in both formats!
+通常は、このデータをCSVやJSONなどの人間が読みやすい形式にエクスポートし、チームの他のメンバーが簡単にアクセスして利用できるようにしたいはずです。両形式へのエクスポート方法を見ていきましょう！
 
-**Note**: The data export logic below applies to scraping scripts that do not use an all-in-one scraping solution like Scrapy. The reason is that solutions typically include built-in [features for exporting data directly in the desired format through specific configurations](https://docs.scrapy.org/en/latest/topics/feed-exports.html).
+**Note**: 以下のデータエクスポートロジックは、Scrapyのようなオールインワンのスクレイピングソリューションを使用しないスクレイピングスクリプトに適用されます。理由は、ソリューション側が通常、特定の設定を通じて希望の形式に直接エクスポートするための[ビルトイン機能](https://docs.scrapy.org/en/latest/topics/feed-exports.html)を備えているためです。
 
 ### CSV Export
-To export the data to CSV, you can use the use Python's built-in [`csv`](https://docs.python.org/3/library/csv.html) module. This module enables you to write data to a `.csv` file, where each key in the dictionary corresponds to a column header, and the values become the corresponding rows.
+データをCSVにエクスポートするには、Python組み込みの[`csv`](https://docs.python.org/3/library/csv.html)モジュールを使用できます。このモジュールにより、データを`.csv`ファイルへ書き込めます。辞書の各キーが列ヘッダーに対応し、値が対応する行になります。
 
-First, open a CSV file called `titles.csv` where to write data using the [`open()`](https://docs.python.org/3/library/functions.html#open) function:
+まず、[`open()`](https://docs.python.org/3/library/functions.html#open)関数を使用して、書き込み先のCSVファイル`titles.csv`を開きます：
 ```python
 with open("titles.csv", mode="w", newline="", encoding="utf-8") as file:
 ```
-In this case, `"w"` is used for writing to the file, and `newline=""` guarantees that rows are written correctly without extra blank lines between them. Note the use of the [`with` statement](https://docs.python.org/3/reference/compound_stmts.html#with), which ensures that the file is properly closed after the operation is complete.
+この場合、`"w"`はファイルへの書き込みを意味し、`newline=""`は行の間に余分な空行が入らないようにして正しく行を書き込むことを保証します。操作完了後にファイルが適切にクローズされるようにする[`with` statement](https://docs.python.org/3/reference/compound_stmts.html#with)の使用に注意してください。
 
-Next, write the header—which will correspond to the dictionary keys—using a [`DictWriter`](https://docs.python.org/3/library/csv.html#csv.DictWriter) class:
+次に、[`DictWriter`](https://docs.python.org/3/library/csv.html#csv.DictWriter)クラスを使用して、辞書キーに対応するヘッダーを書き込みます：
 ```python
 writer = csv.DictWriter(file, fieldnames=["tag", "title"])
 writer.writeheader()
 ```
-After the header, you can write the data itself with the `writer.writerow()` method by iterating over the dictionary list:
+ヘッダーの後は、辞書リストを反復しながら`writer.writerow()`メソッドでデータ自体を書き込みます：
 ```python
 for row in titles:
     writer.writerow(row)
 ```
-The above logic will write the entire rows, where the keys correspond to the columns, and the values are the actual data from the dictionary.
+上記ロジックにより、キーが列に対応し、値が辞書からの実データとなる行全体が書き込まれます。
 
-Finally, the `with` statement will automatically take care of closing the file after writing.
+最後に、`with` statementが書き込み後のファイルクローズを自動的に処理します。
 
-The output will be something like this:
+出力は次のようになります：
 ```csv
 tag,title
 h1,Web scraping
@@ -391,24 +391,24 @@ h3,European Union
 h3,Australia
 h3,India
 ```
-You can find the same result in `titles.csv` file in the repository.
+同じ結果は、リポジトリ内の`titles.csv`ファイルでも確認できます。
 
 ### JSON Export
-To export the scraped data to JSON, you can utilize the Python built-in [`json`](https://docs.python.org/3/library/json.html) module. This module allows you to convert Python dictionaries to a JSON-formatted string and write it to a `.json` file.
+スクレイピングしたデータをJSONにエクスポートするには、Python組み込みの[`json`](https://docs.python.org/3/library/json.html)モジュールを利用できます。このモジュールにより、Python辞書をJSON形式の文字列に変換して`.json`ファイルに書き込めます。
 
-First, open a JSON file called `titles.json` for writing using the `open()` function:
+まず、`open()`関数を使用して書き込み用のJSONファイル`titles.json`を開きます：
 ```python
 with open("titles.json", mode="w", encoding="utf-8") as file:
 ```
-Again, the `with` statement ensures that the file will be automatically closed after the operation is complete.
+ここでも、`with` statementにより操作完了後にファイルが自動的にクローズされます。
 
-Next, use the `json.dump()` function to convert your dictionary into JSON format and write it to the file:
+次に、`json.dump()`関数を使用して辞書をJSON形式に変換し、ファイルへ書き込みます：
 ```python
 json.dump(titles, file, indent=4)
 ```
-The `indent=4` argument ensures that the JSON data is pretty-printed with an indentation level of 4 spaces, making it human-readable.
+`indent=4`引数により、JSONデータがインデント4スペースで整形出力され、人間が読みやすくなります。
 
-The output will look something like this:
+出力は次のようになります：
 ```json
 [
     {
@@ -497,15 +497,15 @@ The output will look something like this:
     }
 ]
 ```
-You can find the same result in the `titles.json` file in the repository.
+同じ結果は、リポジトリ内の`titles.json`ファイルでも確認できます。
 
 ## Web Scraping Examples in Python
-Assume you want to scrape all `<hX>` (where `X` is `1`, `2`, `3`, `4`, or `5`) title elements from the ["Web Scraping" Wikipedia page](https://en.wikipedia.org/wiki/Web_scraping) and export them to CSV. See how to achieve that with:
+["Web Scraping" Wikipedia page](https://en.wikipedia.org/wiki/Web_scraping)から、すべての`<hX>`（`X`は`1`、`2`、`3`、`4`、または`5`）のタイトル要素をスクレイピングしてCSVにエクスポートしたいとします。以下でどのように実現できるかをご覧ください：
 1. Requests + Beautiful Soup
 2. Selenium
 3. Scrapy
 
-Let's perform Python web scraping!
+それでは、PythonでWebスクレイピングを実行しましょう！
 
 ### 1. Requests + Beautiful Soup
 ```python
@@ -563,7 +563,7 @@ with open("titles.csv", mode="w", newline="", encoding="utf-8") as file:
     for row in titles:
         writer.writerow(row)
 ```
-You can find the same logic in the `requests-beautifulsoup-scraper.py` file.
+同じロジックは`requests-beautifulsoup-scraper.py`ファイルで確認できます。
 
 ### 2. Selenium
 ```python
@@ -625,19 +625,19 @@ with open("titles.csv", mode="w", newline="", encoding="utf-8") as file:
     for row in titles:
         writer.writerow(row)
 ```
-You can find the same logic in the `selenium-scraper.py` file.
+同じロジックは`selenium-scraper.py`ファイルで確認できます。
 
 ### Scrapy
-First, initialize a Scrapy project:
+まず、Scrapyプロジェクトを初期化します：
 ```bash
 scrapy startproject scrapy_scraping
 ```
-Then, enter the `scrapy_scraping` folder and creat a new Spider called “wikipedia” that targets the desired page:
+次に、`scrapy_scraping`フォルダに入り、目的のページをターゲットとする「wikipedia」という新しいSpiderを作成します：
 ```bash
 cd scrapy_scraping
 scrapy genspider wikipedia https://en.wikipedia.org/wiki/Web_scraping
 ```
-A `wikipedia.py` file will appear in the `scrapy_scraping/scrapy_scraping/spiders` folder:
+`wikipedia.py`ファイルが`scrapy_scraping/scrapy_scraping/spiders`フォルダに作成されます：
 ```python
 import scrapy
 
@@ -650,7 +650,7 @@ class WikipediaSpider(scrapy.Spider):
     def parse(self, response):
         pass
 ```
-Implement the scraping logic:
+スクレイピングロジックを実装します：
 ```python
 import scrapy
 
@@ -684,29 +684,29 @@ class WikipediaSpider(scrapy.Spider):
                     "title": text,
                 }
 ```
-You can now run the spider to scrape data and export it to a `titles.csv` file with:
+次のコマンドでSpiderを実行してデータをスクレイピングし、`titles.csv`ファイルにエクスポートできます：
 ```bash
 scrapy crawl wikipedia -o titles.csv
 ```
-You can find this Scrapy project in the `scrapy_scraping` folder in the repo.
+このScrapyプロジェクトは、repoの`scrapy_scraping`フォルダで確認できます。
 
 ## Challenges of Python Web Scraping
-Web scraping is not always as simple as demonstrated in this repository. Most websites know the value of their data, even if it is publicly accessible on their pages. Thus, they implement several [anti-scraping measures](https://brightdata.com/blog/web-data/anti-scraping-techniques) to prevent scrapers from accessing their pages and extracting data.
+Webスクレイピングは、このリポジトリで示したように常に簡単とは限りません。多くのWebサイトは、ページ上で一般公開されている場合でもデータの価値を理解しているため、スクレイパーがページにアクセスしてデータを抽出するのを防ぐために、複数の[アンチスクレイピング対策](https://brightdata.jp/blog/web-data/anti-scraping-techniques)を実装しています。
 
-Some of the most effective methods include CAPTCHAs, browser fingerprinting, TLS fingerprinting, rate limiting, IP blocking. While it may be possible to bypass these methods with workarounds, it is a cat-and-mouse game where most tricks are temporary and not always reliable.
+特に効果的な方法には、CAPTCHA、ブラウザフィンガープリント、TLSフィンガープリント、レート制限、IPブロッキングがあります。回避策によってこれらをバイパスできる場合もありますが、いたちごっこのような状況であり、多くの手法は一時的で、常に信頼できるとは限りません。
 
-The solution? Keep reading!
+解決策はあるのでしょうか？ 続きをお読みください！
 
 ## Simplified Web Scraping With Web Scraper API
-[Bright Data's Web Scraper API](https://brightdata.com/products/web-scraper) provides an efficient and scalable solution for extracting structured data from over 100 popular domains, including known e-commerce and social media platforms. The list of supported domains contains of some of the most visited sites worldwide.
+[Bright Data's Web Scraper API](https://brightdata.jp/products/web-scraper)は、著名なeコマースやソーシャルメディアプラットフォームを含む100以上の人気ドメインから、構造化データを抽出するための効率的かつスケーラブルなソリューションを提供します。対応ドメインの一覧には、世界で最も訪問されているサイトの一部が含まれています。
 
-With dedicated endpoints, the API offers seamless access to high-quality, compliant data. The key features of this tool include:
-- Bulk request handling (up to 5,000 URLs per request).
-- Data export to JSON, CSV, and other formats.
-- Integration with any programming language and HTTP client tool.
-- Unlimited concurrent scraping tasks for faster data collection.
-- 99.9% uptime.
-- Automatic IP rotation, CAPTCHA solving, and JavaScript rendering to avoid any block.
-- Built-in integration with a residential proxy network with over 72 million IPs in 195 countries.
+専用エンドポイントにより、このAPIは高品質でコンプライアンスに準拠したデータへシームレスにアクセスできます。本ツールの主な機能は次のとおりです：
+- バルクリクエスト処理（1リクエストあたり最大5,000 URL）。
+- JSON、CSV、その他の形式へのデータエクスポート。
+- 任意のプログラミング言語およびHTTPクライアントツールとの統合。
+- より高速なデータ収集のための、無制限の同時接続スクレイピングタスク。
+- 99.9%の稼働率。
+- ブロックを回避するための自動IPローテーション、CAPTCHA解決、JavaScriptレンダリング。
+- 195か国で7,200万以上のIPを持つレジデンシャルプロキシネットワークとのビルトイン統合。
 
-Web Scraper API reduces web scraping in Python (or any other programming language) to a simple API call. Check out the integration guides in the [official documentation](https://docs.brightdata.com/scraping-automation/web-data-apis/web-scraper-api/overview).
+Web Scraper APIにより、Python（または他の任意のプログラミング言語）でのWebスクレイピングは、単純なAPI呼び出しに集約されます。[official documentation](https://docs.brightdata.com/scraping-automation/web-data-apis/web-scraper-api/overview)にある統合ガイドをご確認ください。
