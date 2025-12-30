@@ -1,6 +1,6 @@
 # Python Web Scraping Guide
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/blob/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/products/web-scraper) 
+[![Promo](https://github.com/bright-jp/LinkedIn-Scraper/blob/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/products/web-scraper) 
 
 このPython Webスクレイピング用リポジトリでは、Webスクレイピングを始めるために必要なものがすべて見つかります。Webスクレイピングの仕組みを確認し、Pythonにおけるさまざまなアプローチを深掘りし、最後に完全な例をレビューします。
 
@@ -52,7 +52,7 @@ Pythonは、シンプルな構文と豊富なオープンソースライブラ�
 最後に、[Scrapy](https://scrapy.org/)のようなオールインワンのWebスクレイピングツールもある点に留意してください。これらのライブラリは4つのステップすべてを単一のプラットフォームに統合することでプロセスを簡素化し、スクレイピングのワークフローを効率化します。
 
 ## Python Web Scraping Libraries
-PythonでのWebスクレイピングに役立つ代表的なライブラリをご紹介します。包括的な一覧については、[Awesome Web Scraping repository](https://github.com/luminati-io/Awesome-Web-Scraping/blob/main/python.md)をご参照ください。
+PythonでのWebスクレイピングに役立つ代表的なライブラリをご紹介します。包括的な一覧については、[Awesome Web Scraping repository](https://github.com/bright-jp/Awesome-Web-Scraping/blob/main/python.md)をご参照ください。
 
 ### HTTP Clients
 - [`requests`](https://github.com/kennethreitz/requests): シンプルでありながら洗練されたHTTPライブラリです。
